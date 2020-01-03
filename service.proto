@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package sessionproto;
+
+message LoginRequest {
+    string authorization = 1;
+    string client = 2;
+    bool overwrite = 3;
+}
+
+message TokenRequest {
+    string token = 1;
+    string client = 2;
+}
+
+message TokenResponse {
+    int32 statusCode = 1;
+    string message = 2;
+    string token = 3;
+}
+
+service Session {
+    rpc Create(LoginRequest) returns (TokenResponse);
+    rpc Update(TokenRequest) returns (TokenResponse);
+    rpc Delete(TokenRequest) returns (TokenResponse);
+}
