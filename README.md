@@ -1,2 +1,2 @@
 # session_proto
-This repo contains protool buffer for session service.
+This repo contains protocol buffer for session service.
